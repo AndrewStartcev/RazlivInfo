@@ -169,17 +169,29 @@
 		}
 	}
 	.menu {
-		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		min-height: 100vh;
+		overflow: auto;
+		background: #fff;
+		padding: 80px 10px;
+		transform: translateY(-120vh);
+		opacity: 0;
+		transition: all 0.5s ease;
+		&.menu--active {
+			opacity: 1;
+			transform: translateY(0vh);
+		}
 		&-list {
-			display: flex;
-			justify-content: stretch;
-			align-items: stretch;
-			list-style: none;
+			flex-direction: column;
+			gap: 10px;
 			margin: 0;
 			padding: 0;
-			flex-wrap: wrap;
 		}
 		&-item {
+			width: 100%;
 			a {
 				padding: 31px 10px;
 				font-size: 14px;
